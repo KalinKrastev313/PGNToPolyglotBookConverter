@@ -1,3 +1,9 @@
+"""
+The contents of this file are extracted from the polyglot writer written by Torsten Hellwig:
+https://github.com/Torom/polyglot-writer/blob/main/polyglot_writer.py
+Slight tweaks on it are possible.
+"""
+
 import chess
 
 
@@ -25,7 +31,6 @@ class Polyglot_Move(int):
 
 
 class Polyglot_Position:
-    # should weight be float or int?
     def __init__(self, zobrist_hash: int, polyglot_move: int, weight: int, learn: int) -> None:
         self.zobrist_hash = zobrist_hash
         self.polyglot_move = polyglot_move
@@ -36,8 +41,7 @@ class Polyglot_Position:
         return [
             self.zobrist_hash.to_bytes(8, byteorder='big', signed=False),
             self.polyglot_move.to_bytes(2, byteorder='big', signed=False),
-            #Edited for black advantage
-            abs(self.weight).to_bytes(2, byteorder='big', signed=False),
+            self.weight.to_bytes(2, byteorder='big', signed=False),
             self.learn.to_bytes(4, byteorder='big', signed=False)
         ]
 
