@@ -1,0 +1,5 @@
+*.txt
+*.pgn
+.idea/
+venv/
+__pycache__/
