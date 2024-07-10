@@ -14,8 +14,9 @@ class PolyglotPositionsCollector:
         if value and isinstance(value, list):
             cleaned_list = [item for item in value if isinstance(item, Polyglot_Position)]
             if len(cleaned_list) > 0:
-                self._polyglot_positions = value
-        self._polyglot_positions = []
+                self._polyglot_positions = cleaned_list
+        else:
+            self._polyglot_positions = []
 
     def _increase_position_weight(self, position_index: int, step=1):
         self._polyglot_positions[position_index].weight += step
