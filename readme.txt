@@ -8,9 +8,11 @@ https://github.com/Torom/polyglot-writer/blob/main/polyglot_writer.py
 Slight tweaks on it are possible.
 
 In order to use the converter, you should first paste a .pgn file in the project directory.
-For example, you can create a PGN file from your lichess game, when you open your profile there and go to export games.
+For example, you can create a PGN file from your lichess game, when you open your profile there and go to "export games".
 Note that polyglot books are made for standard games, so it is wise to exclude other chess variants from the export.
 Nevertheless, the converter would ignore entries where other than the classic starting position is specified.
+Next step is to run the main.py file. Before this, you can manually change the names of the input (pgn_file_name) and
+output (result_file_name) in the main.py file.
 
 Polyglot entries have chess position, corresponding move to it, weight, and learn attributes.
 In this implementation, the weight is simply derived from the number of occurrences of a (position, move) pair.
